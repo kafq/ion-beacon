@@ -1,0 +1,43 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+
+    <div class="dash-profile">
+      <div class="profile-info-container">
+        <h1 class="username">{{user.name}}</h1>
+        <ul class="profile-info">
+          <li ng-class="user.status">{{user.status}}</li>
+          <li>{{user.department}}</li>
+        </ul>
+      </div>     
+    </div>
+
+    <div class="dash-stats">
+      <ul>
+        <li>
+          <span class="big-number">27</span> 
+          <span class="small-text-white">items</span>
+        </li>
+        <li>
+          <span class="big-number">11</span> 
+          <span class="small-text-white">places</span>
+        </li>
+        <li>
+          <span class="big-number">14</span>
+          <span class="small-text-white"> completed</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="todo-list-container">
+      <h1>TASKS</h1>
+      <ul class="todo-list">
+        <li ng-repeat="todos in user.todoItems">
+          <ul class="todo-single">
+            <li class="todo-text">{{todos.text}}</li> <li class="todo-due"><span class="small-text-dark">due</span><br>{{todos.due}}</li>
+          </ul>
+          <hr class="divide-line">
+        </li>
+      </ul>  
+    </div>
+  </ion-content>
+</ion-view>

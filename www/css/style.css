@@ -1,0 +1,122 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+h1 {
+	font-size: 25px;
+	font-weight: 700;
+	line-height: 1;
+	margin: 0;
+}
+
+/*HEADER STYLES*/
+ion-header-bar, .tab-nav, .tabs {
+	border: 0 !important;
+	background-color: #fff !important;
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.3);
+}
+/*END OF HEADER STYLES*/
+
+/*DASH PROFILE STYLES*/
+.dash-profile {
+	display: flex;
+	flex-direction: row;
+	padding-left: 25px;
+	align-items: center;
+	height: 30%;
+	min-height: 150px;
+}
+.profile-info-container {
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px;
+}
+.dash-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;	
+}
+
+/*END OF DASH PROFILE STYLES*/
+
+/*TODO LIST STYLES*/
+.online {
+	color: green;
+}
+.offline {
+	color: red;
+}
+.todo-list-container h1 {
+	margin: 25px 0;
+	color: #245ed3;
+}
+.todo-list {
+ margin: 0 -10px;
+ z-index: 1;
+}
+.todo-single {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-basis: 60px;
+	padding: 0 35px;
+	margin: 20px 0;
+}
+.todo-text {
+	width:70%;
+}
+.todo-due {
+	font-weight: 700;
+	font-size: 20px;
+	color: #245ed3;
+}
+.divide-line {
+	width:50%;
+border: 0;
+border-bottom: 1px solid #d4d4d4;
+}
+.small-text-dark {
+	font-size: 15px;
+	font-weight: 400;
+	opacity: 0.8;
+	color: #000;
+}
+.small-text-white {
+	font-size: 15px;
+	font-weight: 400;
+	opacity: 0.8;
+	color: #fff;
+}
+/*END OF TODO LIST STYLES*/
+
+/*DASH STATS STYLES*/
+.dash-stats {
+	z-index: 10;
+	display:flex;
+	height: 70px;
+	background-color: #245ed3;
+	color: #fff;
+	margin: 0 -10px;
+	padding: 0 25px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.dash-stats ul {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	
+}
+
+.big-number {
+	font-size: 20px;
+	font-weight: 700;
+}
+/*END OF DASH STATS STYLES*/
