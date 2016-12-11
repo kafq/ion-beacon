@@ -5,7 +5,7 @@
       <div class="profile-info-container">
         <h1 class="username">{{user.name}}</h1>
         <ul class="profile-info">
-          <li ng-class="user.status">{{user.status}}</li>
+          <li ng-class="userFromController.status">{{user.status}}</li>
           <li>{{user.department}}</li>
         </ul>
       </div>     
@@ -31,7 +31,7 @@
     <div class="todo-list-container">
       <h1>TASKS</h1>
       <ul class="todo-list">
-        <li ng-repeat="todos in user.todoItems">
+        <li ng-repeat="todos in user.todolist">
           <ul class="todo-single">
             <li class="todo-text">{{todos.text}}</li> <li class="todo-due"><span class="small-text-dark">due</span><br>{{todos.due}}</li>
           </ul>

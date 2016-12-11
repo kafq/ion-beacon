@@ -5,5 +5,34 @@
         Enable Friends
     </ion-toggle>
     </ion-list>
+    <div ng-controller="ExampleController">
+    <h1>Status</h1>
+    {{value.proximity}}
+    <p ng-hide="value.proximity == 'ProximityNear' ">{{status}}</p>
+    <p>Outside of office</p>
+    <div class="list">
+        <div class="item" ng-repeat="(key, value) in beacons">
+            <div class="row">
+                <div class="col truncate">
+                    {{value.uuid}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    major: {{value.major}}
+                </div>
+                <div class="col">
+                    minor: {{value.minor}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{value.proximity}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
   </ion-content>
 </ion-view>

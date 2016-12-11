@@ -3,8 +3,10 @@
 		<div>
 			<h1>Register</h1>
 			<form ng-submit="register()">
-				<input type="text" placeholder="email"></input>
-				<input type="password" placeholder="password"></input>
+				<input type="email" placeholder="email" ng-model="user.email"></input>
+				<input type="password" placeholder="password" ng-model="user.password"></input>
+				<input type="text" placeholder="name" ng-model="user.name"></input>
+				<input type="text" placeholder="department" ng-model="user.department"></input>
 				<input type="submit" value="submit"></input>
 			</form>
 			<a ui-sref="login">Already have an account?</a>
