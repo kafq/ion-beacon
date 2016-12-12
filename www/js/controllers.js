@@ -1,13 +1,20 @@
 angular.module('starter.controllers', ['firebase'])
 
-.controller('DashCtrl', function($scope, $firebaseObject, Profile) {
+.controller('DashCtrl', [ '$scope', 'Profile', '$firebaseObject', '$state', function($scope, $firebaseObject, $state) {
   
-  //TODO: refactor, so that works after multiple reloads
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var currentUser = firebase.auth().currentUser;
+      var uid = currentUser.uid;
+      $scope.user = $firebaseObject(uid);
+  
+    } else {
+      // No user is signed in.
+    }
+  });
 
-  $scope.user = Profile(firebase.auth().currentUser.uid);
-  console.log($scope.user);
-
-})
+}])
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called

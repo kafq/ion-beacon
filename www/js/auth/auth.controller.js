@@ -4,7 +4,10 @@ angular.module('starter.auth.controller', [])
 	var ref = firebase.database().ref();	
 	$scope.user = {};
 
-	$scope.login = function (){
+	$scope.login = function(email, pass){
+	//TODO: remove email& pass, remove assigning to $scope
+	$scope.user.email = email;
+	$scope.user.password = pass;
 	
 	  firebase.auth().signInWithEmailAndPassword($scope.user.email, $scope.user.password).catch(function(error){
 	      var errorCode = error.code;

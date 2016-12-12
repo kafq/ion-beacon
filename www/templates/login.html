@@ -8,6 +8,11 @@
 				<input type="submit" value="submit"></input>
 			</form>
 			<a ui-sref="register">Don't have an account?</a>
+			<div>
+				<h1>Use this to login</h1>
+				<h3> uses kapitan_header@mail.ru and 123456 as password</h3>
+				<input type="submit" name="" ng-click="login('kapitan_header@mail.ru', '123456')" value="one-click login">
+			</div>
 		</div>
 		<pre>{{profile | json }}</pre>
 	</ion-content>

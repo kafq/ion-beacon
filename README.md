@@ -1,29 +1,27 @@
 # Basic Ionic application for beacons
 
-I believe it will never work, if it works, I'm going to be surprised.
+This is a template for ionic-beacon applications (hopefully)
+
+Dashboard controller has an observer, which retrieves user ata from **firebase database** based on user's uid
 
 
-```
-// factory for getting user profile from firebase based on uid
-
-.factory("Profile", ["$firebaseObject",
-  function($firebaseObject) {
-    return function(uid) {
-      // create a reference to the database node where we will store our data
-      var ref = firebase.database().ref("users");
-      var profileRef = ref.child(uid);
-
-      // return it as a synchronized object
-      return $firebaseObject(profileRef);
+``` javascript
+ firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var currentUser = firebase.auth().currentUser;
+      var uid = currentUser.uid;
+      $scope.user = $firebaseObject(uid);
+  
+    } else {
+      // No user is signed in.
     }
-  }
-])
-
+  });
 
 ```
-```
-// retrieving uid, 'cannot read property uid of null' -- sometimes
 
-$scope.user = Profile(firebase.auth().currentUser.uid);
+##Things to do
 
-```
+1. Refactor code in `auth.controller.js`, so that it does not take any parameters and no values are assigned with email & pass
+2. Understand why Profile service works without any use inside of the controller
+3. add angularFire services to update user data
