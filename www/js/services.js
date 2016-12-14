@@ -13,7 +13,7 @@ angular.module('starter.services', [])
   }
 ])
 
-.factory('Auth', ['$firebaseAuth', 
+.factory('Auth', ['$firebaseAuth',
   function($firebaseAuth){
     return $firebaseAuth();
 }])
