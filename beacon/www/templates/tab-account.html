@@ -1,0 +1,38 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>
+    </ion-list>
+    <div ng-controller="ExampleController">
+    <h1>Status</h1>
+    <p>{{status}}</p>
+    <p>Outside of office</p>
+    <div class="list">
+        <div class="item" ng-repeat="(key, value) in beacons">
+            <div class="row">
+                <div class="col truncate">
+                    {{value.uuid}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    major: {{value.major}}
+                </div>
+                <div class="col">
+                    minor: {{value.minor}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{value.proximity}}
+                </div>
+            </div>
+            <input ng-model="statusNow" type="text" value="{{value.proximity}}">
+        </div>
+        <div class="results"></div>
+    </div>
+</div>
+  </ion-content>
+</ion-view>

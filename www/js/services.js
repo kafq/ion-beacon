@@ -1,4 +1,17 @@
+var PROXIMIIO_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImlzcyI6ImQyNzRjMmJkNDk5ZTQ1NzhiNzRkMmQxMzA1OTI2ZDk3IiwidHlwZSI6ImFwcGxpY2F0aW9uIiwiYXBwbGljYXRpb25faWQiOiI4MGM0NTcwZi1hNjYzLTQ5NzctOTI4Mi1iZGMwYmY2Mjk4MjcifQ.PIsPdbJQlvqMM1-GQ7xb0LUuMoFmbJ5QuEIQHNRMS9c";
 angular.module('starter.services', [])
+
+.factory("Proximiio", function() { 
+return { 
+init: function(outputTriggerCallback, inputTriggerCallback, positionChangeCallback) { 
+proximiio.setToken(PROXIMIIO_TOKEN); 
+proximiio.setDebugOutput(true, null, null); 
+proximiio.setOutputTriggerCallback(outputTriggerCallback); 
+proximiio.setInputTriggerCallback(inputTriggerCallback); 
+proximiio.setPositionChangeCallback(positionChangeCallback); 
+} 
+}; 
+})
 
 .factory("Profile", ["$firebaseObject",
   function($firebaseObject) {

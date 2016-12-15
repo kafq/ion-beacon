@@ -5,7 +5,7 @@
       <div class="profile-info-container">
         <h1 class="username">{{user.name}}</h1>
         <ul class="profile-info">
-          <li ng-class="userFromController.status">{{user.status}}</li>
+          <li ng-class="user.status">{{user.status}}</li>
           <li>{{user.department}}</li>
         </ul>
       </div>     
@@ -31,10 +31,9 @@
     <div class="todo-list-container">
       <h1>TASKS</h1>
       <ul class="todo-list">
-        <input type="text" placeholder="New task" ng-model="newTodoItem"><input type="submit" value="Add task">
-        <li ng-repeat="todo in user.todolist">
+        <li ng-repeat="todos in user.todoItems">
           <ul class="todo-single">
-            <li class="todo-text">{{todo.text}}</li> <li class="todo-due"><span class="small-text-dark">due</span><br>{{todo.due}}</li>
+            <li class="todo-text">{{todos.text}}</li> <li class="todo-due"><span class="small-text-dark">due</span><br>{{todos.due}}</li>
           </ul>
           <hr class="divide-line">
         </li>
