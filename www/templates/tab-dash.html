@@ -27,11 +27,11 @@
         </li>
       </ul>
     </div>
-
+{{lists}}
     <div class="todo-list-container">
       <h1>TASKS</h1>
       <ul class="todo-list">
-        <input type="text" placeholder="New task" ng-model="newTodoItem"><input type="submit" value="Add task">
+        <input type="text" placeholder="New task" ng-model="newTodoItem"><input type="submit" value="Add task" ng-click="saveTodo(newTodoItem)">
         <li ng-repeat="todo in user.todolist">
           <ul class="todo-single">
             <li class="todo-text">{{todo.text}}</li> <li class="todo-due"><span class="small-text-dark">due</span><br>{{todo.due}}</li>

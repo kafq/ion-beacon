@@ -13,7 +13,15 @@ angular.module('starter.controllers', ['firebase'])
       // No user is signed in.
     }
   });
+  $scope.lists = [{}];
+  function saveTodo(newTodoItem) {
 
+    var ref = firebase.database().ref().child("users");
+    ref.push().set({
+      newTodoItem: newTodoItem
+    });
+  };
+  $scope.saveTodo = saveTodo;
 }])
 
 .controller('ChatsCtrl', function($scope, Chats) {
