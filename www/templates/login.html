@@ -1,19 +1,31 @@
-<ion-view>
-	<ion-content>
-		<div>
-			<h1>Login</h1>
-			<form ng-submit="login()">
-				<input type="text" placeholder="email" ng-model="user.email"></input>
-				<input type="password" placeholder="password" ng-model="user.password"></input>
-				<input type="submit" value="submit"></input>
-			</form>
-			<a ui-sref="register">Don't have an account?</a>
-			<div>
-				<h1>Use this to login</h1>
-				<h3> uses kapitan_header@mail.ru and 123456 as password</h3>
-				<input type="submit" name="" ng-click="login('kapitan_header@mail.ru', '123456')" value="one-click login">
-			</div>
-		</div>
-		<pre>{{profile | json }}</pre>
-	</ion-content>
-</ion-view>	
+<ion-view id="login-page" hide-nav-bar="true"> 
+	<ion-content> 
+		<div class="form-box"> 
+
+
+			<div class="login-logo"><img src="img/logo.png" id="logo"></div> 
+
+	
+			<form ng-submit="login()" id="login-form" class="list"> 
+
+			<div class="form-group"> 
+			<label class="label-control"></label> 
+			<input type="text" class="form-control" placeholder="email" ng-model="user.email"> 
+			</div> 
+
+			<div class="form-group" id="last_input"> 
+			<label class="label-control"></label> 
+			<input type="password" class="form-control" placeholder="password" ng-model="user.password"> 
+			</div> 
+
+			<input type="submit" class="btn btn-default smbt" value="Submit"> 
+			</form> 
+
+
+<p class="text-p"><a ui-sref="register">Do not have acoount?</a></p> 
+
+</div> 
+	</ion-content> 
+</ion-view>
+
+

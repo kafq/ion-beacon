@@ -39,9 +39,16 @@ $scope.saveTodo = function(newTodoItem) {
   //});
 
   $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+  var chatRef = firebase.database().ref();
+  var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+  
+     firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // If the user is logged in, set them as the Firechat user
+          chat.setUser(user.uid, user.name);
+        } 
+      });
+  
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
@@ -83,26 +90,82 @@ Proximiio.init(outputTriggerCallback, inputTriggerCallback, positionChangeCallba
 
 })
 
-.controller("ExampleController", function($scope, $rootScope, $ionicPlatform, $cordovaBeacon) {
- 
-    $scope.beacons = {};  
-  
-    $ionicPlatform.ready(function() {
- 
-        $cordovaBeacon.requestWhenInUseAuthorization();
- 
-        $rootScope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function(event, pluginResult) {
-            var uniqueBeaconKey;
-            for(var i = 0; i < pluginResult.beacons.length; i++) {
-                uniqueBeaconKey = pluginResult.beacons[i].uuid + ":" + pluginResult.beacons[i].major + ":" + pluginResult.beacons[i].minor;
-                $scope.beacons[uniqueBeaconKey] = pluginResult.beacons[i];
-            }
-            $scope.$apply();
-        });
- 
-        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "B9407F30-F5F8-466E-AFF9-25556B57FE6D"));
- 
-    });
+.controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 
-    console.log('Got this day -- ' + $scope.thisDay);
+// Triggered on a button click, or some other target
+$scope.showPopup = function() {
+  $scope.data = {};
+
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input ng-model="data.wifi">',
+    title: 'Enter the proper reason for absence',
+    subTitle: 'Please be ready to provide evidence',
+    scope: $scope,
+    buttons: [
+      { text: 'Cancel' },
+      {
+        text: '<b>Send</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.wifi) {
+            //don't allow the user to close unless he enters reason
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
+          }
+        }
+      }
+    ]
+  });
+
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+
+  
+ };
+
+ 
+})
+
+.controller('SupportCtrl',function($scope, $ionicPopup, $timeout) {
+
+// Triggered on a button click, or some other target
+$scope.showPopup = function() {
+  $scope.data = {};
+
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input ng-model="data.wifi">',
+    title: 'Please describe the problem',
+    subTitle: 'We will contact you if necessary',
+    scope: $scope,
+    buttons: [
+      { text: 'Cancel' },
+      {
+        text: '<b>Send</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.wifi) {
+            //don't allow the user to close unless he enters reason
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
+          }
+        }
+      }
+    ]
+  });
+
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+
+  
+ };
+
+ 
 });
+
+
