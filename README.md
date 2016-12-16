@@ -8,8 +8,6 @@ run the following commands:
 
   `ionic plugin add https://github.com/proximiio/proximiio-cordova.git`
 
-**go to firechat branch** and clone repository
-
 ## Description
 
 The application is a todo application based on the location of the employee in the office. **Beacons** are used to divide the whole space into various departments, allowing users to asign their tasks to them.
