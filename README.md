@@ -1,9 +1,22 @@
 # Basic Ionic application for beacons
 
-This is a template for ionic-beacon applications (hopefully)
+## Installation 
 
-Dashboard controller has an observer, which retrieves user ata from **firebase database** based on user's uid
+run the following commands:
+  
+  `npm install`
 
+  `ionic plugin add https://github.com/proximiio/proximiio-cordova.git`
+
+**go to beacon branch** and clone repository
+
+## Description
+
+The application is a todo application based on the location of the employee in the office. **Beacons** are used to divide the whole space into various departments, allowing users to asign their tasks to them.
+
+## Just a code sample
+
+Retrieving firebase object synchronized with Firebase database
 
 ``` javascript
  firebase.auth().onAuthStateChanged(function(user) {
@@ -11,17 +24,13 @@ Dashboard controller has an observer, which retrieves user ata from **firebase d
       // User is signed in.
       var currentUser = firebase.auth().currentUser;
       var uid = currentUser.uid;
+      $scope.uid = currentUser.uid;
       $scope.user = $firebaseObject(uid);
+      var itemsRef = firebase.database().ref('users/' + uid + '/todolist/');
+      $scope.todos = $firebaseArray(itemsRef); 
   
     } else {
       // No user is signed in.
     }
   });
-
 ```
-
-##Things to do
-
-1. Refactor code in `auth.controller.js`, so that it does not take any parameters and no values are assigned with email & pass
-2. Understand why Profile service works without any use inside of the controller
-3. add angularFire services to update user data
