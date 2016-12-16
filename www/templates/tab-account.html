@@ -1,27 +1,18 @@
-<ion-view view-title="Proximiio Status"> 
-<ion-content class="padding"> 
-<div class="list card"> 
-<div class="item item-divider">Current geofence</div> 
-<div class="item item-body"> 
-<div> 
-<strong>object<p>{{ inputObject.name }}</p></strong> 
-</div> 
-</div> 
-</div> 
-<div class="list card"> 
-<div class="item item-divider">Output</div> 
-<div class="item item-body"> 
-<pre>{{ output }}</pre> 
-</div> 
-</div> 
-<div class="list card"> 
-<div class="item item-divider">Position</div> 
-<div class="item item-body"> 
-<div> 
-latitude: <strong>{{ lastPositionLatitude }}</strong> <br/> 
-longitude: <strong>{{ lastPositionLongitude }}</strong> 
-</div> 
-</div> 
-</div> 
-</ion-content> 
+<ion-view view-title="Proximiio Status">
+  <ion-content class="padding">
+   <div class="list card">
+      <div class="item item-divider btnlogout">Position</div>
+      <div class="item item-body">
+        <div>
+          Latitude: <strong>{{ lastPositionLatitude }}</strong> <br/>
+          Longitude: <strong>{{ lastPositionLongitude }}</strong>
+        </div>
+      </div>
+    </div>
+    <button class="button button-block btnlogout" ng-controller="PopupCtrl as pop" ng-click="showPopup()">Report absence</button>
+    <button class="button button-block btnlogout" ng-controller="AuthController as auth" ng-click="logOut()">Logout</button>
+    <button class="button button-block btnlogout" ng-controller="PopupCtrl as pop" ng-click="showPopup()">Contact Support</button>
+  </ion-content>
 </ion-view>
+
+

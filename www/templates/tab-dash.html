@@ -4,11 +4,14 @@
     <div class="dash-profile">
       <div class="profile-info-container">
         <h1 class="username">{{user.name}}</h1>
+       
         <ul class="profile-info">
-          <li ng-class="userFromController.status">{{user.status}}</li>
-          <li>{{user.department}}</li>
+          <li ng-class="userFromController.status" class="userstatusnow">online</li>
+          <img src="./img/profile.png" class="profilepic">
+          
+          
         </ul>
-      </div>     
+      </div>    
     </div>
 
     <div class="dash-stats">
@@ -27,18 +30,19 @@
         </li>
       </ul>
     </div>
-    {{items}}
-    {{todos}}
-    <div class="todo-list-container">
+
+    <div class="todo-list-container"  id="dashboard-page">
       <h1>TASKS</h1>
-       <form ng-submit="saveTodo(newTodoItem); newTodoItem.text=''; newTodoItem.due='';">
-          <input type="text" placeholder="New task" ng-model="newTodoItem.text">
-          <input type="text" placeholder="due" ng-model="newTodoItem.due">
-          <input type="submit" value="Add task">
+      <div class="todo-form">
+        <form ng-submit="saveTodo(newTodoItem); newTodoItem.text=''; newTodoItem.due='';">
+          <input type="text" placeholder="New task" class="form-control" ng-model="newTodoItem.text">
+          <input type="text" placeholder="due" class="form-control" ng-model="newTodoItem.due">
+          <input type="submit" class="btn btn-default form-control" value="Add task">
         </form>
+        </div>
       <ul class="todo-list">
        
-        <li ng-repeat="todo in todos">
+        <li ng-repeat="todo in user.todolist">
           <ul class="todo-single">
             <li class="todo-text">{{todo.text}}</li> <li class="todo-due"><span class="small-text-dark">due</span><br>{{todo.due}}</li>
           </ul>
@@ -46,5 +50,8 @@
         </li>
       </ul>  
     </div>
+<li id="positionNow" ng-controller="AccountCtrl as accCtrl" ng-change="savePosition()">Position: {{ inputObject.name }}</li>
   </ion-content>
 </ion-view>
+
+

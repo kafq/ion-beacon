@@ -1,15 +1,43 @@
-<ion-view>
-	<ion-content>
-		<div>
-			<h1>Register</h1>
-			<form ng-submit="register()">
-				<input type="email" placeholder="email" ng-model="user.email"></input>
-				<input type="password" placeholder="password" ng-model="user.password"></input>
-				<input type="text" placeholder="name" ng-model="user.name"></input>
-				<input type="text" placeholder="department" ng-model="user.department"></input>
-				<input type="submit" value="submit"></input>
-			</form>
-			<a ui-sref="login">Already have an account?</a>
-		</div>
-	</ion-content>
+<ion-view id="register-page" hide-nav-bar="true"> 
+<ion-content> 
+
+<div class="form-box"> 
+
+
+<div class="login-logo"><img src="img/logo.png" id="logo"></div> 
+
+<div ng-show="authCtrl.error"> 
+<span>{{ authCtrl.error.message }}</span> 
+</div> 
+<form ng-submit="register()" id="login-form" class="list"> 
+
+<div class="form-group"> 
+<label class="label-control"></label> 
+<input type="email" placeholder="email" ng-model="user.email"></input>
+</div> 
+
+<div class="form-group"> 
+<label class="label-control"></label> 
+<input type="password" placeholder="password" ng-model="user.password"></input>
+</div> 
+
+<div class="form-group"> 
+<label class="label-control"></label> 
+<input type="text" placeholder="name" ng-model="user.name"></input> 
+</div> 
+
+<div class="form-group"> 
+<label class="label-control"></label> 
+<input type="text" placeholder="department" ng-model="user.department"></input>
+</div> 
+
+<input type="submit" class="btn btn-default" value="Register"> 
+</form> 
+
+
+<p class="text-p"><a ui-sref="login">Already have an account?</a></p> 
+</div> 
+</ion-content> 
 </ion-view>
+
+

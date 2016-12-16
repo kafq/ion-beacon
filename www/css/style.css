@@ -120,3 +120,240 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	font-weight: 700;
 }
 /*END OF DASH STATS STYLES*/
+
+
+/*START OF FIRECHAT STYLES*/
+.firechat-dropdown a {
+	height: 50px !important;
+	background-color: #fff !important;
+}
+#firechat {
+	font-size: 40px !important;
+}
+/*END OF FIRECHAT STYLES*/
+
+/*START OF SETTINGS STYLES*/
+
+#positionNow {
+	position: absolute;
+    top: 10vh;
+    list-style: none;
+    left: 90px;
+}
+.username {
+	position: absolute;
+    top: 3vh;
+    left: 90px;
+}
+.userstatusnow {
+	position: absolute;
+    top: 7vh;
+    text-decoration: none;
+    color: green;
+    left: 90px;
+}
+.profilepic {
+	width: 60px;
+    position: absolute;
+    top: 4vh;
+}
+.btnlogout {
+	background-color: #245ed3;
+	color: white;
+}
+/*END OF SETTINGS STYLES*/
+
+/*START OF FORM*/
+.todo-form {
+	height: 10vh;
+	padding: 0 30px;
+	border: 1px solid #d4d4d4;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.todo-form form {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#dashboard-page form input {
+	font-size: 20px !important;
+	background-color: #fff !important;
+}
+#dashboard-page form input[type="submit"] {
+	background-color: #245ed3 !important;
+	color: #fff !important;
+}
+@media(min-width: 200px) {
+
+	 #dashboard-page .todo-form form {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	#dashboard-page  .todo-form {
+		height: auto;
+		margin: 0;
+		border-radius: 4px;
+	}
+	#dashboard-page  input {
+		border-bottom: 3px solid #245ed3 !important;
+		margin: 13px 0;
+		color: #000 !important;
+	}
+	#dashboard-page  .form-control::-webkit-input-placeholder {
+  color: #000;
+  opacity:0.7;
+}
+#dashboard-page  .form-control::-moz-placeholder {
+  color: #000;
+  opacity:0.7;
+}
+#dashboard-page  .form-control:-ms-input-placeholder {
+  color:#000;
+  opacity:0.7;
+}
+
+#dashboard-page .form-control:-moz-placeholder {
+  color: #fff;
+  opacity:0.7;
+}
+}
+/*END OF FORM*/
+
+/*LOGIN FORM*/
+/*Login Register Styles*/
+
+label {
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.login-logo {
+  text-align: center;
+}
+.form-group {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 7px;
+}
+
+.form-group .label-control {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  pointer-events: none;
+  height: 100%;
+   border-bottom: 7px solid #fff;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+  margin-top: 20px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 50px;
+}
+.form-control::-webkit-input-placeholder {
+  color: #fff;
+  opacity:0.7;
+}
+.form-control::-moz-placeholder {
+  color: #fff;
+  opacity:0.7;
+}
+.form-control:-ms-input-placeholder {
+  color:#fff;
+  opacity:0.7;
+}
+
+.form-control:-moz-placeholder {
+  color: #fff;
+  opacity:0.7;
+}
+
+
+
+.input-field label:before{
+  content: '';
+  padding-bottom: 10px;
+  width: 100%;
+  border-bottom: 4px solid #fff;
+}
+
+input[type="password"], input[type="email"],  input[type="text"]
+{	
+	color: #fff;
+  background: transparent;
+  
+  font-weight: 700;
+  font-size: 21px;
+}
+input.btn[type="submit"] {
+  background: #fff;
+  border:none;
+  border-radius: 5px;
+  color: #245ed3;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0;
+  outline: medium none;
+  overflow: hidden;
+  padding: 6px;
+  text-transform: lowercase;
+  width: 100%;
+  font-weight: 700;
+  font-size: 21px;
+-webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+}
+.text-p{
+  font-size: 21px;
+  text-align: center;
+  margin: 10px 0;
+  color: #fff;
+}
+.text-p a{
+  color: #175690;
+}
+@media (max-width: 480px){
+  form#login-form {
+    width: 63%;
+    margin: auto;
+  }
+}
+#logo {
+  width:65%;
+  margin: 50px 0px 18px 0px;
+}
+#last_input {
+  margin-bottom: 40px;
+}
+.text-p a {
+  color: #fff;
+  text-decoration: none;
+}
+#login-page {
+	background-color: #245ed3;
+}
+#register-page {
+  background: #245ed3; 
+}
+
+
+
+/*ENF OF LOGIN FORM*/
