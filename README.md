@@ -8,7 +8,7 @@ run the following commands:
 
   `ionic plugin add https://github.com/proximiio/proximiio-cordova.git`
 
-**go to beacon branch** and clone repository
+**go to firechat branch** and clone repository
 
 ## Description
 
