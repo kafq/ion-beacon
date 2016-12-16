@@ -1,27 +1,32 @@
 angular.module('starter.controllers', ['firebase'])
 
-.controller('DashCtrl', [ '$scope', 'Profile', '$firebaseObject', '$state', function($scope, $firebaseObject, $state) {
+.controller('DashCtrl', [ '$scope', 'Profile', '$firebaseObject', '$firebaseArray', '$state', function($scope, $firebaseObject, $firebaseArray, $state) {
   
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       var currentUser = firebase.auth().currentUser;
       var uid = currentUser.uid;
+      $scope.uid = currentUser.uid;
       $scope.user = $firebaseObject(uid);
+      var itemsRef = firebase.database().ref('users/' + uid + '/todolist/');
+      $scope.todos = $firebaseArray(itemsRef); 
   
     } else {
       // No user is signed in.
     }
   });
-  $scope.lists = [{}];
-  function saveTodo(newTodoItem) {
 
-    var ref = firebase.database().ref().child("users");
+
+$scope.saveTodo = function(newTodoItem) {
+
+    var ref = firebase.database().ref().child("users").child($scope.uid).child("todolist");
     ref.push().set({
-      newTodoItem: newTodoItem
+      text: newTodoItem.text,
+      due: newTodoItem.due
     });
   };
-  $scope.saveTodo = saveTodo;
+
 }])
 
 .controller('ChatsCtrl', function($scope, Chats) {
